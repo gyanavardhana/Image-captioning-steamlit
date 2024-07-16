@@ -1,0 +1,169 @@
+/* styles.css */
+
+.navbar {
+  background-color: #1f2937; /* Tailwind's bg-gray-900 */
+  color: white;
+  padding: 1rem 1.5rem; /* Tailwind's px-6 py-4 */
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Tailwind's shadow-md */
+}
+
+.navbar h1 {
+  font-size: 2rem; /* Tailwind's text-3xl */
+  font-weight: bold; /* Tailwind's font-bold */
+  flex-grow: 1;
+  text-align: center;
+}
+
+.avatar {
+  cursor: pointer;
+  width: 56px;
+  height: 56px;
+  margin-right: 1.5rem; /* Tailwind's mr-6 */
+}
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.bg-gray-800 {
+  background-color: #2d3748; /* Tailwind's bg-gray-800 */
+}
+
+.text-white {
+  color: #ffffff; /* Tailwind's text-white */
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem; /* Tailwind's text-2xl */
+}
+
+.font-bold {
+  font-weight: bold; /* Tailwind's font-bold */
+}
+
+.mb-4 {
+  margin-bottom: 1rem; /* Tailwind's mb-4 */
+}
+
+.h-auto {
+  height: auto;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem; /* Tailwind's rounded-lg */
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Tailwind's shadow-lg */
+}
+
+.text-lg {
+  font-size: 1.125rem; /* Tailwind's text-lg */
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem; /* Tailwind's mb-6 */
+}
+
+.grid {
+  display: grid;
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.sm\\:grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.md\\:grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.gap-3 {
+  gap: 0.75rem; /* Tailwind's gap-3 */
+}
+
+.mb-5 {
+  margin-bottom: 1.25rem; /* Tailwind's mb-5 */
+}
+
+.h-80 {
+  height: 20rem; /* Tailwind's h-80 */
+}
+
+.w-full {
+  width: 100%;
+}
+
+.list-disc {
+  list-style-type: disc;
+}
+
+.list-inside {
+  list-style-position: inside;
+}
+
+.space-y-2 > * + * {
+  margin-top: 0.5rem; /* Tailwind's space-y-2 */
+}
+
+
+/* styles.css */
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem; /* Tailwind's gap-6 */
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 100%;
+  max-width: 20rem; /* Tailwind's max-w-xs */
+  background-color: whitesmoke; /* Tailwind's bg-gray-800 */
+  color: #2d3748; /* Tailwind's text-white */
+  border-radius: 0.5rem; /* Tailwind's rounded-lg */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Tailwind's shadow-lg */
+  overflow: hidden;
+  cursor: pointer;
+  text-align: center;
+  margin-bottom: 1.5rem; /* Tailwind's mb-6 */
+}
+
+.card img {
+  width: 100%;
+  height: 12rem; /* Tailwind's h-48 */
+  object-fit: cover;
+}
+
+.card h3 {
+  font-size: 1.25rem; /* Tailwind's text-xl */
+  font-weight: bold; /* Tailwind's font-bold */
+  margin: 1rem 0; /* Tailwind's my-4 */
+  color: #2d3748;
+}
+
+.card a{
+  background-color: #2d3748;
+}
+.card p {
+  font-size: 1rem; /* Tailwind's text-base */
+  margin: 0 1rem 1rem; /* Tailwind's mx-4 mb-4 */
+  
+}
