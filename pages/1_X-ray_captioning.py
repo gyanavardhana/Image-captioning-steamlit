@@ -89,7 +89,7 @@ def xray_page():
     # Display the code snippet
     st.code(code, language='python')
     # Update the file path
-    df = pd.read_csv(r"C:\Users\91888\Downloads\Flask Tutorial\pages\train_caption_df.csv")
+    df = pd.read_csv("static/train_caption_df.csv")
     df1 = df.iloc[:, [1, 2]]
     st.write("### Unprocessed captions data")
     st.dataframe(df1)
@@ -106,7 +106,7 @@ def xray_page():
         the quality and consistency of input images for the captioning model.
         """
     )
-    df3 = pd.read_csv(r"C:\Users\91888\Downloads\Flask Tutorial\pages\test_preprocessed_df.csv")
+    df3 = pd.read_csv('static/test_preprocessed_df.csv')
     st.write("### Processed Images & Captions data")
     st.dataframe(df3)
 
