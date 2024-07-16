@@ -8,7 +8,7 @@ def get_base64_image(image_path):
         return base64.b64encode(img_file.read()).decode()
 
 # Load images
-infosys_image = get_base64_image("static/infosys.jpg")
+infosys_image = get_base64_image("static/Infosys.jpg")
 springboard_image = get_base64_image("static/Spring.png")
 surf_image = get_base64_image("static/surf.jpg")
 workflow_image = get_base64_image("static/workflow.png")
