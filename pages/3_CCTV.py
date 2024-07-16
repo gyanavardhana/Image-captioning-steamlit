@@ -14,7 +14,7 @@ model_metrics = [
     {"metric": "F1 Score", "value": "86%"},
 ]
 
-infosys_image = get_base64_image("static/infosys.jpg")
+infosys_image = get_base64_image("static/Infosys.jpg")
 springboard_image = get_base64_image("static/Spring.png")
 
 # Load custom CSS
