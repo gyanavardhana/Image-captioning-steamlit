@@ -102,3 +102,6 @@ wcwidth==0.2.13
 webencodings==0.5.1
 Werkzeug==3.0.3
 yarg==0.1.9
+torch==2.3.1
+torchvision==0.18.1
+transformers==4.42.4

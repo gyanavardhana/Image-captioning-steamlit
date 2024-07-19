@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
 import base64
+from transformers import pipeline
+from PIL import Image
 
 # Function to load image and convert to base64
 def get_base64_image(image_path):
@@ -88,6 +90,7 @@ def xray_page():
 
     # Display the code snippet
     st.code(code, language='python')
+
     # Update the file path
     df = pd.read_csv("static/train_caption_df.csv")
     df1 = df.iloc[:, [1, 2]]
@@ -120,6 +123,33 @@ def xray_page():
 
     # Display metrics in a table
     st.table(model_metrics)
+
+    # Add image captioning section
+    st.write("## Image Captioning")
+    st.write(
+        """
+        Upload an image to generate a caption using the fine-tuned model.
+        """
+    )
+
+    # Set up the caption pipeline
+    caption_pipeline = pipeline("image-to-text", model="nathansutton/generate-cxr")
+
+    # Image upload
+    uploaded_image = st.file_uploader('Upload an image', type=["png", "jpg", "jpeg"])
+
+    if uploaded_image is not None:
+        # Display the uploaded image
+        image = Image.open(uploaded_image)
+        st.image(image, caption="Uploaded Image", use_column_width=True)
+
+        # Button to generate caption
+        if st.button("Generate Caption"):
+            with st.spinner('Generating caption...'):
+                # Generate caption
+                captions = caption_pipeline(image)
+                # Display the caption
+                st.write(captions[0]['generated_text'])
 
 # Main function to run the Streamlit app
 if __name__ == "__main__":
