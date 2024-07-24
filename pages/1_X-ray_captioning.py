@@ -1,8 +1,9 @@
 import streamlit as st
 import pandas as pd
 import base64
-from transformers import pipeline
 from PIL import Image
+import hashlib
+# from transformers import pipeline
 
 # Function to load image and convert to base64
 def get_base64_image(image_path):
@@ -132,8 +133,8 @@ def xray_page():
         """
     )
 
-    # Set up the caption pipeline
-    caption_pipeline = pipeline("image-to-text", model="nathansutton/generate-cxr")
+    # Load new CSV file containing image names and captions
+    new_df = pd.read_csv("static/new_image_captions.csv")
 
     # Image upload
     uploaded_image = st.file_uploader('Upload an image', type=["png", "jpg", "jpeg"])
@@ -142,14 +143,27 @@ def xray_page():
         # Display the uploaded image
         image = Image.open(uploaded_image)
         st.image(image, caption="Uploaded Image", use_column_width=True)
+        
+        # Extract the image name
+        image_name = uploaded_image.name
 
-        # Button to generate caption
-        if st.button("Generate Caption"):
-            with st.spinner('Generating caption...'):
-                # Generate caption
-                captions = caption_pipeline(image)
-                # Display the caption
-                st.write(captions[0]['generated_text'])
+        # Check if the image name is in the new CSV
+        if image_name in new_df['image_name'].values:
+            # Get the caption from the dataframe
+            caption = new_df[new_df['image_name'] == image_name]['caption'].values[0]
+            st.write(f"Caption for {image_name}: {caption}")
+        else:
+            st.write("Image not found in the dataset.")
+        
+        # Optionally, if you still want to use the model to generate a caption
+        
+        # if st.button("Generate Caption"):
+        #     with st.spinner('Generating caption...'):
+        #         # Generate caption using the pipeline
+        #         caption_pipeline = pipeline("image-to-text", model="nathansutton/generate-cxr")
+        #         captions = caption_pipeline(image)
+        #         st.write(captions[0]['generated_text'])
+        
 
 # Main function to run the Streamlit app
 if __name__ == "__main__":
